@@ -1,0 +1,31 @@
+Q1)  KD4_shivani_83519>select a.Sname,b.Sname,a.City from SALESPEOPLE a,SALESPEOPLE b where a.City = b.City and a.Sname < b.Sname;
++--------+-------+--------+
+| Sname  | Sname | City   |
++--------+-------+--------+
+| motika | peel  | london |
++--------+-------+--------+
+1 row in set (0.00 sec)
+
+
+Q2)  KD4_shivani_83519>select Cname,City from CUSTOMERS where Rating = (select Rating from CUSTOMERS where Cname = 'Hoffman'); //USING SUBQUERRY
++---------+--------+
+| Cname   | City   |
++---------+--------+
+| Hoffman | London |
+| Clemens | London |
+| Pereira | Rome   |
++---------+--------+
+3 rows in set (0.00 sec)
+
+
+Q2)  KD4_shivani_83519>select distinct(a.Cname),b.City,a.Rating from CUSTOMERS a, CUSTOMERS b where a.Cnum = b.Cnum and a.Rating = 100; //USING SELF JOIN
++---------+--------+--------+
+| Cname   | City   | Rating |
++---------+--------+--------+
+| Hoffman | London |    100 |
+| Clemens | London |    100 |
+| Pereira | Rome   |    100 |
++---------+--------+--------+
+3 rows in set (0.00 sec)
+
+

@@ -1,0 +1,53 @@
+Q1) write a querry that will give you all orders for more than Rs 1000?
+ANS:[1] select * from ORDERS where AMT>1000;
+    [2] select AMT from orders where AMT>1000;
+    
+Q2)  write a querry that will give you the names and cities of all salespeople in london with a commision above 0.10?
+ANS:[1] select sname,city from SALESPEOPLE where city='london' and comm>0.10;
+
+Q3)  write a querry on the customers table whose output will exclude all customers with a rating <=100,unless they are located in rome?
+ANS:[1] select * from CUSTOMERS where rating <= 100 and city != 'rome';    
+
+Q4) KD4_shivani_83519>select * from ORDERS where (AMT <1000 OR NOT (Odate = '1990-10-03' AND Cnum >2003));
++------+---------+------------+------+------+
+| Onum | Amt     | Odate      | Cnum | Snum |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3003 |  767.19 | 1990-10-03 | 2001 | 1001 |
+| 3005 | 5160.45 | 1990-10-03 | 2003 | 1002 |
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
+| 3007 |   75.75 | 1990-10-04 | 2004 | 1002 |
+| 3008 | 4723.00 | 1990-10-05 | 2006 | 1001 |
+| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |
++------+---------+------------+------+------+
+8 rows in set (0.00 sec)
+
+Q5) KD4_shivani_83519>select * from ORDERS where NOT ((odate = '1990-10-03' OR Snum>1006) AND Amt>=1500);
++------+---------+------------+------+------+
+| Onum | Amt     | Odate      | Cnum | Snum |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3003 |  767.19 | 1990-10-03 | 2001 | 1001 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
+| 3009 | 1713.23 | 1990-10-04 | 2002 | 1003 |
+| 3007 |   75.75 | 1990-10-04 | 2004 | 1002 |
+| 3008 | 4723.00 | 1990-10-05 | 2006 | 1001 |
+| 3010 | 1309.95 | 1990-10-06 | 2004 | 1002 |
+| 3011 | 9891.88 | 1990-10-06 | 2006 | 1001 |
++------+---------+------------+------+------+
+8 rows in set (0.00 sec)
+
+Q6)  KD4_shivani_83519>SELECT snum,sname,city,comm from SALESPEOPLE where (comm > 0.12 OR comm < 0.14);
++------+---------+-----------+------+
+| snum | sname   | city      | comm |
++------+---------+-----------+------+
+| 1001 | peel    | london    | 0.12 |
+| 1002 | serres  | san jose  | 0.13 |
+| 1004 | motika  | london    | 0.11 |
+| 1007 | rifkin  | barcelona | 0.15 |
+| 1003 | axelrod | new york  | 0.10 |
++------+---------+-----------+------+
+5 rows in set (0.00 sec)
+
+

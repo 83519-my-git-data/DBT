@@ -1,0 +1,70 @@
+Q1)  KD4_shivani_83519>select Cname,Onum from CUSTOMERS,ORDERS where CUSTOMERS.Cnum = ORDERS.Cnum;
++----------+------+
+| Cname    | Onum |
++----------+------+
+| Cisneros | 3001 |
+| Hoffman  | 3003 |
+| Pereira  | 3002 |
+| Liu      | 3005 |
+| Cisneros | 3006 |
+| Giovanni | 3009 |
+| Grass    | 3007 |
+| Clemens  | 3008 |
+| Grass    | 3010 |
+| Clemens  | 3011 |
++----------+------+
+10 rows in set (0.00 sec)
+
+
+Q2)  KD4_shivani_83519>select Cname,Sname,Onum from ORDERS,CUSTOMERS,SALESPEOPLE where ORDERS.Snum = CUSTOMERS.Snum AND ORDERS.Snum = SALESPEOPLE.Snum;
++----------+---------+------+
+| Cname    | Sname   | Onum |
++----------+---------+------+
+| Cisneros | rifkin  | 3001 |
+| Clemens  | peel    | 3003 |
+| Hoffman  | peel    | 3003 |
+| Pereira  | motika  | 3002 |
+| Grass    | serres  | 3005 |
+| Liu      | serres  | 3005 |
+| Cisneros | rifkin  | 3006 |
+| Giovanni | axelrod | 3009 |
+| Grass    | serres  | 3007 |
+| Liu      | serres  | 3007 |
+| Clemens  | peel    | 3008 |
+| Hoffman  | peel    | 3008 |
+| Grass    | serres  | 3010 |
+| Liu      | serres  | 3010 |
+| Clemens  | peel    | 3011 |
+| Hoffman  | peel    | 3011 |
++----------+---------+------+
+16 rows in set (0.00 sec)
+
+
+Q3)  KD4_shivani_83519>select Cname,SALESPEOPLE.Sname,Comm*100 "rate of commision" from CUSTOMERS, SALESPEOPLE where CUSTOMERS.Snum = SALESPEOPLE.Snum AND Comm>0.12;
++----------+--------+-------------------+
+| Cname    | Sname  | rate of commision |
++----------+--------+-------------------+
+| Liu      | serres |             13.00 |
+| Grass    | serres |             13.00 |
+| Cisneros | rifkin |             15.00 |
++----------+--------+-------------------+
+3 rows in set (0.00 sec)
+
+
+Q4)  KD4_shivani_83519>select onum,cname,sname,amt*comm as comm_amt from ORDERS join CUSTOMERS on ORDERS.cnum=CUSTOMERS.cnum join SALESPEOPLE on ORDERS.snum=SALESPEOPLE.snum where CUSTOMERS.rating>100;
++------+----------+---------+----------+
+| onum | cname    | sname   | comm_amt |
++------+----------+---------+----------+
+| 3010 | Grass    | serres  |   170.29 |
+| 3007 | Grass    | serres  |     9.85 |
+| 3005 | Liu      | serres  |   670.86 |
+| 3006 | Cisneros | rifkin  |   164.72 |
+| 3001 | Cisneros | rifkin  |     2.80 |
+| 3009 | Giovanni | axelrod |   171.32 |
++------+----------+---------+----------+
+6 rows in set (0.01 sec)
+
+KD4_shivani_83519>
+
+
+

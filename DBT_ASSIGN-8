@@ -1,0 +1,60 @@
+Q1) KD4_shivani_83519>select Onum,Cnum,Amt*0.12 from ORDERS;
++------+------+----------+
+| Onum | Cnum | Amt*0.12 |
++------+------+----------+
+| 3001 | 2008 |     2.24 |
+| 3003 | 2001 |    92.06 |
+| 3002 | 2007 |   228.01 |
+| 3005 | 2003 |   619.25 |
+| 3006 | 2008 |   131.78 |
+| 3009 | 2002 |   205.59 |
+| 3007 | 2004 |     9.09 |
+| 3008 | 2006 |   566.76 |
+| 3010 | 2004 |   157.19 |
+| 3011 | 2006 |  1187.03 |
++------+------+----------+
+10 rows in set (0.00 sec)
+
+
+Q2)KD4_shivani_83519>select city,max(Rating) 'highest' from CUSTOMERS group by city;
++----------+---------+
+| city     | highest |
++----------+---------+
+| London   |     100 |
+| Rome     |     200 |
+| San Jose |     300 |
+| Berlin   |     300 |
++----------+---------+
+4 rows in set (0.00 sec)
+
+
+Q3)  
+KD4_shivani_83519>select Rating,Cname,Cnum from CUSTOMERS order by Rating desc;
++--------+----------+------+
+| Rating | Cname    | Cnum |
++--------+----------+------+
+|    300 | Grass    | 2004 |
+|    300 | Cisneros | 2008 |
+|    200 | Giovanni | 2002 |
+|    200 | Liu      | 2003 |
+|    100 | Hoffman  | 2001 |
+|    100 | Clemens  | 2006 |
+|    100 | Pereira  | 2007 |
++--------+----------+------+
+7 rows in set (0.00 sec)
+
+
+Q4)  KD4_shivani_83519>select odate,count(odate) 'TOTAL ORDER' from ORDERS group by odate order by 1 desc;
++------------+-------------+
+| odate      | TOTAL ORDER |
++------------+-------------+
+| 1990-10-06 |           2 |
+| 1990-10-05 |           1 |
+| 1990-10-04 |           2 |
+| 1990-10-03 |           5 |
++------------+-------------+
+4 rows in set (0.00 sec)
+
+
+
+

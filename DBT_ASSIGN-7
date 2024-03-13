@@ -1,0 +1,69 @@
+Q1) KD4_shivani_83519>select count(*) from ORDERS where odate = '1990-10-03';
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+
+
+Q2) KD4_shivani_83519>select count(*) from CUSTOMERS where city is not null;
++----------+
+| count(*) |
++----------+
+|        7 |
++----------+
+
+
+Q3) KD4_shivani_83519>select cnum,min(Amt) 'smallest order' from ORDERS group by cnum;
++------+----------------+
+| cnum | smallest order |
++------+----------------+
+| 2008 |          18.69 |
+| 2001 |         767.19 |
+| 2007 |        1900.10 |
+| 2003 |        5160.45 |
+| 2002 |        1713.23 |
+| 2004 |          75.75 |
+| 2006 |        4723.00 |
++------+----------------+
+7 rows in set (0.00 sec)
+
+
+
+Q4) KD4_shivani_83519>select min(Cname) from CUSTOMERS where Cname like 'G%';
++------------+
+| min(Cname) |
++------------+
+| Giovanni   |
++------------+
+1 row in set (0.00 sec)
+
+
+
+Q5) KD4_shivani_83519>select city,max(Rating) 'highest' from CUSTOMERS group by city;
++----------+---------+
+| city     | highest |
++----------+---------+
+| London   |     100 |
+| Rome     |     200 |
+| San Jose |     300 |
+| Berlin   |     300 |
++----------+---------+
+4 rows in set (0.00 sec)
+
+
+Q6) KD4_shivani_83519>select odate,count(distinct Snum) from ORDERS group by odate;
++------------+----------------------+
+| odate      | count(distinct Snum) |
++------------+----------------------+
+| 1990-10-03 |                    4 |
+| 1990-10-04 |                    2 |
+| 1990-10-05 |                    1 |
+| 1990-10-06 |                    2 |
++------------+----------------------+
+4 rows in set (0.01 sec)
+
+
+
+
+

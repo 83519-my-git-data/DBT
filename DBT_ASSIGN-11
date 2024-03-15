@@ -1,0 +1,24 @@
+Q1)KD4_shivani_83519>select Onum,Odate,Amt from ORDERS WHERE Snum = (SELECT Snum from CUSTOMERS where Cname = 'Cisneros');
++------+------------+---------+
+| Onum | Odate      | Amt     |
++------+------------+---------+
+| 3001 | 1990-10-03 |   18.69 |
+| 3006 | 1990-10-03 | 1098.16 |
++------+------------+---------+
+
+Q2)KD4_shivani_83519>select Cname,Rating from CUSTOMERS where Cnum IN(select Cnum from ORDERS where Amt > (select avg(Amt) from ORDERS));
++---------+--------+
+| Cname   | Rating |
++---------+--------+
+| Liu     |    200 |
+| Clemens |    100 |
++---------+--------+
+
+
+Q3)KD4_shivani_83519>select Snum,sum(Amt) from ORDERS group by Snum having sum(Amt) > (select max(Amt) from ORDERS);
++------+----------+
+| Snum | sum(Amt) |
++------+----------+
+| 1001 | 15382.07 |
++------+----------+
+
